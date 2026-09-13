@@ -1,0 +1,2729 @@
+/* =========================================================
+   RADIO CAPRICHOS V2
+   app.css
+   ========================================================= */
+
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+    --bg: #050b10;
+    --bg-soft: #081118;
+
+    --panel: #0b151d;
+    --panel-light: #101d26;
+    --panel-hover: #14232d;
+
+    --orange: #ff751f;
+    --orange-light: #ff9b4a;
+    --orange-dark: #c94c00;
+
+    --green: #35d46f;
+    --red: #ed4438;
+
+    --white: #ffffff;
+    --text: #eef3f6;
+    --muted: #91a0aa;
+
+    --border: rgba(255, 255, 255, 0.09);
+
+    --sidebar-width: 220px;
+
+    --radius: 18px;
+
+    --shadow:
+        0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 80% 0%,
+            rgba(21, 58, 77, 0.30),
+            transparent 30%
+        ),
+        var(--bg);
+
+    color: var(--text);
+}
+
+
+button,
+input {
+    font: inherit;
+}
+
+
+button {
+    cursor: pointer;
+}
+
+
+a {
+    color: inherit;
+}
+
+
+::selection {
+    background: var(--orange);
+    color: #111;
+}
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+
+::-webkit-scrollbar-track {
+    background: #071016;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: #263945;
+    border-radius: 20px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--orange);
+}
+
+
+/* =========================
+   APP
+========================= */
+
+.app {
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns:
+        var(--sidebar-width)
+        minmax(0, 1fr);
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+    position: sticky;
+    top: 0;
+
+    height: 100vh;
+
+    padding: 24px 15px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(7, 15, 21, 0.99),
+            rgba(4, 9, 13, 0.99)
+        );
+
+    border-right:
+        1px solid var(--border);
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 100;
+}
+
+
+/* BRAND */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 4px 8px 25px;
+}
+
+
+.brand-condor {
+    width: 47px;
+    height: 47px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 30px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 117, 31, 0.25),
+            transparent 65%
+        );
+
+    border:
+        1px solid rgba(255, 117, 31, 0.25);
+}
+
+
+.brand h1 {
+    font-size: 17px;
+    line-height: 1;
+
+    letter-spacing: 0.5px;
+}
+
+
+.brand h1 span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--orange);
+}
+
+
+.brand small {
+    display: block;
+
+    margin-top: 6px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+}
+
+
+/* MENU */
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.sidebar-menu > a {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 10px 12px;
+
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    color: #c8d1d7;
+
+    font-size: 13px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.sidebar-menu > a:hover {
+    color: var(--white);
+
+    background:
+        rgba(255, 117, 31, 0.09);
+
+    transform: translateX(2px);
+}
+
+
+.sidebar-menu > a.active {
+    color: var(--orange);
+
+    background:
+        rgba(255, 117, 31, 0.13);
+}
+
+
+.menu-separator {
+    height: 1px;
+
+    margin: 13px 8px;
+
+    background: var(--border);
+}
+
+
+.menu-title {
+    padding: 0 12px 6px;
+
+    color: #5f717c;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    font-weight: bold;
+}
+
+
+/* SIDEBAR BOTTOM */
+
+.sidebar-bottom {
+    margin-top: auto;
+
+    padding: 15px 10px 5px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+
+.sidebar-bottom strong {
+    color: var(--orange);
+
+    font-size: 17px;
+}
+
+
+.sidebar-bottom span {
+    color: var(--muted);
+
+    font-size: 10px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.main-content {
+    width: 100%;
+
+    max-width: 1600px;
+
+    margin: 0 auto;
+
+    padding:
+        16px
+        18px
+        40px;
+}
+
+
+/* =========================================================
+   HERO REAL
+========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 320px;
+
+    overflow: hidden;
+
+    border-radius: var(--radius);
+
+    border:
+        1px solid var(--border);
+
+    background:
+        #081118
+        url("../assets/images/hero/radio-caprichos-hero.png")
+        center center / cover
+        no-repeat;
+
+    box-shadow: var(--shadow);
+}
+
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.04) 0%,
+            rgba(0, 0, 0, 0.10) 55%,
+            rgba(0, 0, 0, 0.45) 100%
+        );
+
+    z-index: 1;
+}
+
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    box-shadow:
+        inset 0 -80px 100px rgba(0, 0, 0, 0.28);
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+/* Ocultamos los antiguos emojis del hero */
+
+.hero-landscape,
+.hero-content {
+    display: none;
+}
+
+
+/* =========================================================
+   PLAYER + CHAT GRID
+========================================================= */
+
+.top-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 2fr)
+        minmax(260px, 0.75fr);
+
+    gap: 14px;
+
+    margin-top: 14px;
+}
+
+
+/* =========================================================
+   PLAYER
+========================================================= */
+
+.player-card {
+    min-height: 250px;
+
+    display: grid;
+
+    grid-template-columns:
+        190px
+        minmax(0, 1fr);
+
+    gap: 22px;
+
+    align-items: center;
+
+    padding: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #101d26,
+            #081219
+        );
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+}
+
+
+/* COVER */
+
+.album-cover {
+    position: relative;
+
+    aspect-ratio: 1;
+
+    max-height: 205px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    background:
+        radial-gradient(
+            circle at 50% 25%,
+            #ff9d49 0%,
+            #6e2f0b 24%,
+            #172029 55%,
+            #071017 80%
+        );
+
+    border:
+        1px solid rgba(255, 117, 31, 0.40);
+
+    box-shadow:
+        0 15px 35px
+        rgba(0, 0, 0, 0.45);
+}
+
+
+.album-cover::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            transparent,
+            rgba(255, 117, 31, 0.10)
+        );
+}
+
+
+.album-condor {
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 76px;
+
+    filter:
+        drop-shadow(
+            0 5px 15px
+            rgba(0, 0, 0, 0.5)
+        );
+}
+
+
+.album-cover > span {
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 7px;
+
+    color: var(--orange-light);
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+/* PLAYER INFO */
+
+.player-info {
+    min-width: 0;
+}
+
+
+.player-badges {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 10px;
+}
+
+
+.live-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 5px 9px;
+
+    border-radius: 5px;
+
+    background: var(--red);
+
+    color: white;
+
+    font-size: 10px;
+
+    font-weight: bold;
+}
+
+
+.quality {
+    color: #73858f;
+
+    font-size: 10px;
+}
+
+
+.now-playing {
+    color: var(--green);
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    font-weight: bold;
+}
+
+
+.player-info h2 {
+    margin-top: 5px;
+
+    font-size:
+        clamp(
+            23px,
+            3vw,
+            35px
+        );
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+.player-info > p {
+    margin-top: 5px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* EQUALIZER */
+
+.equalizer {
+    height: 40px;
+
+    margin:
+        18px
+        0
+        12px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+
+    overflow: hidden;
+}
+
+
+.equalizer span {
+    width: 3px;
+
+    height: 6px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--orange-light),
+            var(--orange)
+        );
+
+    opacity: 0.85;
+
+    transform-origin: center;
+}
+
+
+.equalizer.playing span {
+    animation:
+        equalizer
+        0.85s
+        ease-in-out
+        infinite;
+}
+
+
+.equalizer.playing span:nth-child(2n) {
+    animation-delay: 0.12s;
+}
+
+
+.equalizer.playing span:nth-child(3n) {
+    animation-delay: 0.23s;
+}
+
+
+.equalizer.playing span:nth-child(4n) {
+    animation-delay: 0.35s;
+}
+
+
+@keyframes equalizer {
+
+    0%,
+    100% {
+        height: 5px;
+    }
+
+    50% {
+        height: 35px;
+    }
+}
+
+
+/* CONTROLS */
+
+.player-controls {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+}
+
+
+.small-control {
+    width: 34px;
+    height: 34px;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #d4dde2;
+
+    font-size: 18px;
+
+    border-radius: 50%;
+
+    transition:
+        background 0.2s,
+        color 0.2s;
+}
+
+
+.small-control:hover {
+    color: var(--orange);
+
+    background:
+        rgba(255, 255, 255, 0.05);
+}
+
+
+.play-button {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--orange-light),
+            var(--orange)
+        );
+
+    color: #111;
+
+    font-size: 23px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(255, 117, 31, 0.30);
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+
+.play-button:hover {
+    transform: scale(1.06);
+
+    box-shadow:
+        0 10px 30px
+        rgba(255, 117, 31, 0.45);
+}
+
+
+.volume-control {
+    margin-left: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.volume-control input {
+    width: 105px;
+
+    accent-color: var(--orange);
+}
+
+
+.player-status {
+    margin-top: 11px;
+
+    color: #637681;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   CHAT
+========================================================= */
+
+.chat-card {
+    min-height: 250px;
+
+    padding: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--panel),
+            #081219
+        );
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.chat-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding-bottom: 12px;
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+
+.chat-header h3 {
+    font-size: 14px;
+}
+
+
+.chat-header span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+}
+
+
+.chat-demo {
+    padding: 4px 7px;
+
+    border-radius: 5px;
+
+    background:
+        rgba(255, 117, 31, 0.12);
+
+    color: var(--orange);
+
+    font-size: 8px;
+
+    font-weight: bold;
+}
+
+
+.chat-messages {
+    flex: 1;
+
+    padding-top: 13px;
+}
+
+
+.message {
+    display: grid;
+
+    grid-template-columns:
+        34px
+        1fr;
+
+    gap: 8px;
+
+    align-items: start;
+
+    margin-bottom: 13px;
+}
+
+
+.avatar {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #1b2a34;
+
+    border:
+        1px solid var(--border);
+}
+
+
+.message strong {
+    font-size: 11px;
+}
+
+
+.message p {
+    margin-top: 3px;
+
+    color: #aab6bd;
+
+    font-size: 10px;
+
+    line-height: 1.4;
+}
+
+
+.chat-input {
+    display: flex;
+
+    gap: 7px;
+
+    padding-top: 10px;
+
+    border-top:
+        1px solid var(--border);
+}
+
+
+.chat-input input {
+    min-width: 0;
+
+    flex: 1;
+
+    padding: 9px 10px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 8px;
+
+    outline: none;
+
+    background: #111e26;
+
+    color: white;
+
+    font-size: 10px;
+}
+
+
+.chat-input button {
+    width: 36px;
+
+    border: 0;
+
+    border-radius: 8px;
+
+    background: var(--orange);
+
+    color: #111;
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.stations-section {
+    margin-top: 26px;
+}
+
+
+.section-heading {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 12px;
+}
+
+
+.section-label {
+    color: var(--orange);
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+}
+
+
+.section-heading h2 {
+    margin-top: 4px;
+
+    font-size: 22px;
+}
+
+
+.section-heading > p {
+    color: var(--muted);
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   STATIONS
+========================================================= */
+
+.stations {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            6,
+            minmax(0, 1fr)
+        );
+
+    gap: 10px;
+}
+
+
+.station-card {
+    min-width: 0;
+
+    overflow: hidden;
+
+    background: var(--panel);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 14px;
+
+    transition:
+        transform 0.2s,
+        border 0.2s,
+        box-shadow 0.2s;
+
+    cursor: pointer;
+}
+
+
+.station-card:hover {
+    transform: translateY(-4px);
+
+    border-color:
+        rgba(255, 117, 31, 0.50);
+
+    box-shadow:
+        0 12px 30px
+        rgba(0, 0, 0, 0.30);
+}
+
+
+.station-card.active {
+    border-color:
+        rgba(255, 117, 31, 0.85);
+
+    box-shadow:
+        0 0 25px
+        rgba(255, 117, 31, 0.12);
+}
+
+
+.station-image {
+    height: 110px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1a2d38,
+            #0c151b
+        );
+}
+
+
+.station-image.main {
+    background:
+        radial-gradient(
+            circle,
+            #70300e,
+            #14212a 55%,
+            #091117
+        );
+}
+
+
+.station-content {
+    padding: 11px;
+}
+
+
+.station-content h3 {
+    min-height: 30px;
+
+    font-size: 12px;
+
+    line-height: 1.25;
+}
+
+
+.station-content p {
+    margin-top: 3px;
+
+    min-height: 24px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+    line-height: 1.3;
+}
+
+
+.station-content > span {
+    display: inline-block;
+
+    margin-top: 7px;
+
+    padding: 4px 7px;
+
+    border-radius: 20px;
+
+    background: #17252e;
+
+    color: #c3ccd1;
+
+    font-size: 8px;
+}
+
+
+.station-content .station-live {
+    background:
+        rgba(53, 212, 111, 0.13);
+
+    color: var(--green);
+}
+
+
+/* =========================================================
+   HISTORY
+========================================================= */
+
+.history-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 14px;
+
+    margin-top: 28px;
+}
+
+
+.history-card {
+    min-height: 190px;
+
+    display: grid;
+
+    grid-template-columns:
+        90px
+        1fr;
+
+    gap: 20px;
+
+    align-items: center;
+
+    padding: 24px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    background:
+        linear-gradient(
+            145deg,
+            #0c171f,
+            #071016
+        );
+}
+
+
+.history-icon {
+    font-size: 60px;
+
+    text-align: center;
+
+    filter:
+        drop-shadow(
+            0 5px 15px
+            rgba(0, 0, 0, 0.4)
+        );
+}
+
+
+.history-card h2 {
+    margin-top: 5px;
+
+    font-size: 21px;
+}
+
+
+.history-card p {
+    margin-top: 8px;
+
+    max-width: 480px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+.history-card a {
+    display: inline-block;
+
+    margin-top: 13px;
+
+    color: var(--orange);
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    font-weight: bold;
+}
+
+
+.history-card a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    margin-top: 30px;
+
+    padding: 25px 10px 10px;
+
+    text-align: center;
+
+    color: var(--muted);
+
+    border-top:
+        1px solid var(--border);
+}
+
+
+.footer-brand {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    color: var(--orange);
+
+    font-size: 13px;
+}
+
+
+footer p {
+    margin-top: 7px;
+
+    font-size: 10px;
+
+    font-style: italic;
+}
+
+
+footer small {
+    display: block;
+
+    margin-top: 12px;
+
+    color: #53636c;
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   MOBILE NAV
+========================================================= */
+
+.mobile-nav {
+    display: none;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1180px) {
+
+    :root {
+        --sidebar-width: 190px;
+    }
+
+
+    .stations {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+
+    .top-grid {
+        grid-template-columns:
+            minmax(0, 1.6fr)
+            minmax(240px, 0.8fr);
+    }
+
+
+    .player-card {
+        grid-template-columns:
+            160px
+            1fr;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .top-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .chat-card {
+        min-height: auto;
+    }
+
+
+    .history-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 720px) {
+
+    body {
+        padding-bottom: 72px;
+    }
+
+
+    .app {
+        display: block;
+    }
+
+
+    .sidebar {
+        display: none;
+    }
+
+
+    .main-content {
+        padding:
+            8px
+            8px
+            20px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 225px;
+
+        border-radius: 14px;
+
+        background-position: center center;
+    }
+
+
+    /* PLAYER */
+
+    .top-grid {
+        margin-top: 8px;
+    }
+
+
+    .player-card {
+        grid-template-columns:
+            105px
+            minmax(0, 1fr);
+
+        gap: 12px;
+
+        min-height: auto;
+
+        padding: 12px;
+
+        border-radius: 14px;
+    }
+
+
+    .album-cover {
+        max-height: none;
+    }
+
+
+    .album-condor {
+        font-size: 45px;
+    }
+
+
+    .album-cover > span {
+        font-size: 6px;
+
+        letter-spacing: 1px;
+    }
+
+
+    .player-badges {
+        margin-bottom: 6px;
+    }
+
+
+    .live-badge {
+        padding: 4px 6px;
+
+        font-size: 7px;
+    }
+
+
+    .quality {
+        display: none;
+    }
+
+
+    .now-playing {
+        font-size: 7px;
+    }
+
+
+    .player-info h2 {
+        margin-top: 3px;
+
+        font-size: 18px;
+    }
+
+
+    .player-info > p {
+        margin-top: 3px;
+
+        font-size: 9px;
+    }
+
+
+    .equalizer {
+        height: 22px;
+
+        margin:
+            8px
+            0;
+    }
+
+
+    .equalizer span {
+        width: 2px;
+    }
+
+
+    @keyframes equalizer {
+
+        0%,
+        100% {
+            height: 3px;
+        }
+
+        50% {
+            height: 20px;
+        }
+    }
+
+
+    .player-controls {
+        gap: 8px;
+    }
+
+
+    .small-control {
+        width: 26px;
+        height: 26px;
+
+        font-size: 13px;
+    }
+
+
+    .play-button {
+        width: 43px;
+        height: 43px;
+
+        font-size: 17px;
+    }
+
+
+    .volume-control {
+        display: none;
+    }
+
+
+    .player-status {
+        margin-top: 5px;
+
+        font-size: 7px;
+    }
+
+
+    /* CHAT */
+
+    .chat-card {
+        display: none;
+    }
+
+
+    /* SECTIONS */
+
+    .stations-section {
+        margin-top: 20px;
+    }
+
+
+    .section-heading {
+        align-items: center;
+    }
+
+
+    .section-heading h2 {
+        font-size: 18px;
+    }
+
+
+    .section-heading > p {
+        display: none;
+    }
+
+
+    .stations {
+        display: flex;
+
+        gap: 9px;
+
+        overflow-x: auto;
+
+        scroll-snap-type:
+            x mandatory;
+
+        padding-bottom: 8px;
+    }
+
+
+    .station-card {
+        min-width: 135px;
+
+        scroll-snap-align: start;
+    }
+
+
+    .station-image {
+        height: 90px;
+
+        font-size: 40px;
+    }
+
+
+    .station-content {
+        padding: 9px;
+    }
+
+
+    .station-content h3 {
+        font-size: 11px;
+    }
+
+
+    .history-grid {
+        margin-top: 20px;
+
+        gap: 9px;
+    }
+
+
+    .history-card {
+        grid-template-columns:
+            60px
+            1fr;
+
+        min-height: auto;
+
+        gap: 12px;
+
+        padding: 17px;
+
+        border-radius: 14px;
+    }
+
+
+    .history-icon {
+        font-size: 42px;
+    }
+
+
+    .history-card h2 {
+        font-size: 16px;
+    }
+
+
+    .history-card p {
+        font-size: 9px;
+    }
+
+
+    footer {
+        margin-top: 20px;
+
+        padding-bottom: 20px;
+    }
+
+
+    .mobile-nav {
+        position: fixed;
+
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        z-index: 999;
+
+        height: 66px;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(5, 1fr);
+
+        background:
+            rgba(5, 11, 16, 0.96);
+
+        backdrop-filter:
+            blur(18px);
+
+        -webkit-backdrop-filter:
+            blur(18px);
+
+        border-top:
+            1px solid var(--border);
+    }
+
+
+    .mobile-nav a {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 3px;
+
+        color: #84939c;
+
+        text-decoration: none;
+
+        font-size: 8px;
+    }
+
+
+    .mobile-nav a > span {
+        font-size: 18px;
+    }
+
+
+    .mobile-nav a.active {
+        color: var(--orange);
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .player-card {
+        grid-template-columns:
+            90px
+            minmax(0, 1fr);
+    }
+
+
+    .small-control {
+        display: none;
+    }
+
+
+    .station-card {
+        min-width: 125px;
+    }
+
+}
+
+
+/* =========================================================
+   RADIO CAPRICHOS V2
+   AJUSTES FINALES CONSOLIDADOS
+========================================================= */
+
+/* PLAYER FINAL */
+
+.player-card {
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: 22px;
+    align-items: center;
+    padding: 18px;
+}
+
+.album-cover {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    max-height: none;
+    aspect-ratio: 1 / 1;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 117, 31, 0.40);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+    background: #081118;
+}
+
+.album-cover::before {
+    display: none;
+}
+
+.album-cover-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+.album-condor,
+.album-cover > span:not(.album-cover-image) {
+    display: none;
+}
+
+.player-info {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.player-badges {
+    margin-bottom: 4px;
+}
+
+.player-info h2 {
+    margin: 4px 0 4px;
+    font-size: clamp(25px, 2.4vw, 32px);
+    line-height: 1.1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.player-info > p {
+    margin: 0 0 10px;
+}
+
+.equalizer {
+    height: 34px;
+    margin: 8px 0 10px;
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.small-control {
+    width: 34px;
+    height: 34px;
+}
+
+.play-button {
+    width: 56px;
+    height: 56px;
+    flex: 0 0 56px;
+    font-size: 22px;
+}
+
+.volume-control {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.volume-control input {
+    width: 120px;
+}
+
+.player-status {
+    margin-top: 7px;
+    font-size: 10px;
+}
+
+/* STATIONS FINAL */
+
+.stations {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.station-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.station-image,
+.station-image.main {
+    width: 100%;
+    height: auto !important;
+    aspect-ratio: 1 / 1;
+    display: block;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #081118;
+}
+
+.station-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    transition:
+        transform 0.35s ease,
+        filter 0.35s ease;
+}
+
+.station-card:hover .station-image img {
+    transform: scale(1.045);
+}
+
+.station-card.active .station-image img {
+    transform: scale(1.02);
+}
+
+.station-content {
+    padding: 15px 16px 17px;
+    flex: 1;
+}
+
+.station-content h3 {
+    min-height: 0;
+    margin: 0 0 7px;
+    font-size: 17px;
+    line-height: 1.25;
+}
+
+.station-content p {
+    min-height: 0;
+    margin: 0 0 14px;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+/* TABLET */
+
+@media (max-width: 1100px) {
+
+    .stations {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .player-card {
+        grid-template-columns: 120px minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .album-cover {
+        width: 120px;
+        height: 120px;
+    }
+
+    .player-info h2 {
+        font-size: 24px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 720px) {
+
+    .player-card {
+        grid-template-columns: 90px minmax(0, 1fr);
+        gap: 13px;
+        min-height: 0;
+        padding: 14px;
+    }
+
+    .album-cover {
+        width: 90px;
+        height: 90px;
+        border-radius: 12px;
+    }
+
+    .player-info h2 {
+        font-size: 21px;
+    }
+
+    .player-controls {
+        gap: 9px;
+    }
+
+    .play-button {
+        width: 48px;
+        height: 48px;
+        flex: 0 0 48px;
+    }
+
+    .volume-control {
+        display: none;
+    }
+
+    .stations {
+        display: flex;
+        grid-template-columns: none;
+        gap: 12px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 8px;
+    }
+
+    .station-card {
+        min-width: 210px;
+        scroll-snap-align: start;
+    }
+
+    .station-image,
+    .station-image.main {
+        width: 100%;
+        height: auto !important;
+        aspect-ratio: 1 / 1;
+    }
+
+    .station-content {
+        padding: 12px;
+    }
+
+    .station-content h3 {
+        font-size: 13px;
+    }
+
+    .station-content p {
+        margin-bottom: 9px;
+        font-size: 10px;
+    }
+}
+
+/* VERY SMALL PHONES */
+
+@media (max-width: 390px) {
+
+    .player-card {
+        grid-template-columns: 82px minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    .album-cover {
+        width: 82px;
+        height: 82px;
+    }
+
+    .player-info h2 {
+        font-size: 18px;
+    }
+
+    .small-control {
+        display: none;
+    }
+
+    .station-card {
+        min-width: 185px;
+    }
+}
+
+
+/* =========================================================
+   RADIO CAPRICHOS V2
+   BLOQUE 2 - PLAYER + CHAT PRO
+========================================================= */
+
+/* --- Zona superior --- */
+
+.top-grid {
+    grid-template-columns: minmax(0, 1.85fr) minmax(300px, 0.75fr);
+    gap: 16px;
+    align-items: stretch;
+}
+
+/* --- Player: más protagonista --- */
+
+.player-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 220px;
+    grid-template-columns: 170px minmax(0, 1fr);
+    gap: 24px;
+    padding: 22px;
+    background:
+        radial-gradient(circle at 14% 18%, rgba(255,117,31,.14), transparent 30%),
+        linear-gradient(145deg, #101d26, #081219 72%);
+}
+
+.player-card::after {
+    content: "";
+    position: absolute;
+    inset: auto -80px -100px auto;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,117,31,.09), transparent 70%);
+    pointer-events: none;
+}
+
+.album-cover {
+    width: 170px;
+    height: 170px;
+    border-radius: 20px;
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.42),
+        0 0 0 1px rgba(255,117,31,.12);
+}
+
+.player-info {
+    position: relative;
+    z-index: 1;
+}
+
+.player-badges {
+    gap: 9px;
+    margin-bottom: 8px;
+}
+
+.live-badge {
+    border-radius: 999px;
+    padding: 6px 10px;
+    box-shadow: 0 0 18px rgba(237,68,56,.18);
+}
+
+.quality {
+    padding: 5px 9px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: rgba(255,255,255,.025);
+}
+
+.now-playing {
+    margin-top: 2px;
+}
+
+.player-info h2 {
+    margin: 7px 0 3px;
+    font-size: clamp(28px, 2.5vw, 36px);
+    letter-spacing: -0.5px;
+}
+
+.player-info > p {
+    margin: 0;
+    font-size: 13px;
+}
+
+.equalizer {
+    width: min(100%, 520px);
+    height: 38px;
+    margin: 13px 0 12px;
+    padding: 0 2px;
+    gap: 5px;
+    mask-image: linear-gradient(90deg, #000 88%, transparent);
+    -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent);
+}
+
+.equalizer span {
+    width: 3px;
+    min-height: 5px;
+    box-shadow: 0 0 10px rgba(255,117,31,.25);
+}
+
+.player-controls {
+    width: 100%;
+    gap: 10px;
+}
+
+.small-control {
+    border: 1px solid transparent;
+}
+
+.small-control:hover {
+    border-color: var(--border);
+}
+
+.play-button {
+    width: 60px;
+    height: 60px;
+    flex-basis: 60px;
+    box-shadow:
+        0 10px 30px rgba(255,117,31,.28),
+        inset 0 1px 0 rgba(255,255,255,.22);
+}
+
+.volume-control {
+    min-width: 190px;
+    padding: 8px 10px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: rgba(0,0,0,.16);
+}
+
+.volume-control input {
+    width: 125px;
+}
+
+.player-status {
+    margin-top: 9px;
+    color: #728590;
+}
+
+/* --- Chat: más moderno pero claramente DEMO --- */
+
+.chat-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 220px;
+    padding: 0;
+    background:
+        linear-gradient(180deg, rgba(15,28,37,.98), rgba(7,16,22,.98));
+}
+
+.chat-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 80px;
+    background: linear-gradient(180deg, rgba(255,117,31,.055), transparent);
+    pointer-events: none;
+}
+
+.chat-header {
+    position: relative;
+    z-index: 1;
+    padding: 16px 17px 13px;
+    background: rgba(255,255,255,.012);
+}
+
+.chat-header h3 {
+    font-size: 15px;
+}
+
+.chat-header span {
+    font-size: 9px;
+}
+
+.chat-demo {
+    padding: 5px 8px;
+    border: 1px solid rgba(255,117,31,.18);
+    border-radius: 999px;
+    background: rgba(255,117,31,.10);
+}
+
+.chat-messages {
+    position: relative;
+    z-index: 1;
+    padding: 14px 16px 5px;
+}
+
+.message {
+    grid-template-columns: 36px 1fr;
+    gap: 10px;
+    margin-bottom: 11px;
+}
+
+.avatar {
+    width: 34px;
+    height: 34px;
+    background:
+        radial-gradient(circle at 30% 25%, #263c49, #13212a 72%);
+}
+
+.message strong {
+    font-size: 11px;
+    color: #f2f5f7;
+}
+
+.message p {
+    display: inline-block;
+    margin-top: 4px;
+    padding: 7px 9px;
+    border-radius: 3px 10px 10px 10px;
+    background: rgba(255,255,255,.035);
+    font-size: 10px;
+    line-height: 1.45;
+}
+
+.chat-input {
+    position: relative;
+    z-index: 1;
+    margin-top: auto;
+    padding: 11px 13px 13px;
+    background: rgba(0,0,0,.13);
+}
+
+.chat-input input {
+    height: 38px;
+    padding: 9px 12px;
+    border-radius: 10px;
+    background: #0d1a22;
+}
+
+.chat-input input:focus {
+    border-color: rgba(255,117,31,.45);
+    box-shadow: 0 0 0 3px rgba(255,117,31,.06);
+}
+
+.chat-input button {
+    width: 39px;
+    height: 38px;
+    border-radius: 10px;
+    box-shadow: 0 7px 18px rgba(255,117,31,.18);
+}
+
+/* --- Tablet --- */
+
+@media (max-width: 1100px) {
+    .top-grid {
+        grid-template-columns: minmax(0, 1.5fr) minmax(280px, .85fr);
+    }
+
+    .player-card {
+        grid-template-columns: 140px minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .album-cover {
+        width: 140px;
+        height: 140px;
+    }
+
+    .volume-control {
+        min-width: 160px;
+    }
+
+    .volume-control input {
+        width: 95px;
+    }
+}
+
+/* --- Pantallas medianas: chat pasa debajo --- */
+
+@media (max-width: 900px) {
+    .top-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chat-card {
+        min-height: 250px;
+    }
+}
+
+/* --- Móvil --- */
+
+@media (max-width: 720px) {
+    .player-card {
+        grid-template-columns: 92px minmax(0, 1fr);
+        gap: 13px;
+        padding: 14px;
+        min-height: 0;
+    }
+
+    .album-cover {
+        width: 92px;
+        height: 92px;
+        border-radius: 14px;
+    }
+
+    .player-info h2 {
+        font-size: 20px;
+        margin-top: 4px;
+    }
+
+    .equalizer {
+        height: 24px;
+        margin: 7px 0 8px;
+        gap: 3px;
+    }
+
+    .play-button {
+        width: 48px;
+        height: 48px;
+        flex-basis: 48px;
+    }
+
+    .volume-control {
+        display: none;
+    }
+
+    /* La navegación móvil ya da acceso al chat:
+       no ocupamos la portada inicial con la demo. */
+    .chat-card {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   18 - BLOQUE 5 / PLAYER SPECTRUM PRO
+   Radio Caprichos V2
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   18.1 - METADATOS / NOW PLAYING
+--------------------------------------------------------- */
+
+.track-metadata {
+    min-height: 16px;
+    margin-top: 3px;
+    color: #aebbc3;
+    font-size: 11px;
+    line-height: 1.35;
+}
+
+.track-metadata:empty {
+    display: none;
+}
+
+
+/* ---------------------------------------------------------
+   18.2 - BADGE DE CALIDAD
+--------------------------------------------------------- */
+
+.quality {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 5px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.025);
+    color: #82939d;
+    font-size: 10px;
+    letter-spacing: 0.2px;
+}
+
+
+/* ---------------------------------------------------------
+   18.3 - CONTENEDOR DEL NUEVO ESPECTRO
+--------------------------------------------------------- */
+
+.equalizer.spectrum {
+    position: relative;
+    width: min(100%, 560px);
+    height: 54px;
+    margin: 12px 0 13px;
+    padding: 7px 10px;
+
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 117, 31, 0.08);
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 117, 31, 0.025),
+            rgba(255, 117, 31, 0.008)
+        );
+
+    mask-image: none;
+    -webkit-mask-image: none;
+}
+
+
+/* Línea central muy suave */
+
+.equalizer.spectrum::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    top: 50%;
+    height: 1px;
+    background: rgba(255, 117, 31, 0.08);
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+
+/* Brillo lateral */
+
+.equalizer.spectrum::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 117, 31, 0.06),
+            transparent 16%,
+            transparent 84%,
+            rgba(255, 117, 31, 0.04)
+        );
+    pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   18.4 - BARRAS DEL ESPECTRO
+--------------------------------------------------------- */
+
+.equalizer.spectrum span {
+    position: relative;
+    z-index: 1;
+
+    flex: 1 1 0;
+    width: auto;
+    min-width: 2px;
+    max-width: 5px;
+
+    height: 10px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffb06f 0%,
+            #ff8b3d 38%,
+            var(--orange) 100%
+        );
+
+    opacity: 0.88;
+
+    transform: scaleY(0.35);
+    transform-origin: center;
+
+    box-shadow:
+        0 0 7px rgba(255, 117, 31, 0.22);
+
+    animation: none;
+}
+
+
+/* Barras con alturas base diferentes */
+
+.equalizer.spectrum span:nth-child(4n + 1) {
+    height: 22px;
+}
+
+.equalizer.spectrum span:nth-child(4n + 2) {
+    height: 36px;
+}
+
+.equalizer.spectrum span:nth-child(4n + 3) {
+    height: 28px;
+}
+
+.equalizer.spectrum span:nth-child(4n) {
+    height: 42px;
+}
+
+
+/* ---------------------------------------------------------
+   18.5 - ANIMACIÓN CUANDO LA RADIO ESTÁ SONANDO
+--------------------------------------------------------- */
+
+.equalizer.spectrum.playing span {
+    animation-name: rc-spectrum;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+
+.equalizer.spectrum.playing span:nth-child(6n + 1) {
+    animation-duration: 0.48s;
+    animation-delay: -0.11s;
+}
+
+.equalizer.spectrum.playing span:nth-child(6n + 2) {
+    animation-duration: 0.66s;
+    animation-delay: -0.27s;
+}
+
+.equalizer.spectrum.playing span:nth-child(6n + 3) {
+    animation-duration: 0.55s;
+    animation-delay: -0.39s;
+}
+
+.equalizer.spectrum.playing span:nth-child(6n + 4) {
+    animation-duration: 0.73s;
+    animation-delay: -0.18s;
+}
+
+.equalizer.spectrum.playing span:nth-child(6n + 5) {
+    animation-duration: 0.59s;
+    animation-delay: -0.31s;
+}
+
+.equalizer.spectrum.playing span:nth-child(6n) {
+    animation-duration: 0.81s;
+    animation-delay: -0.46s;
+}
+
+
+@keyframes rc-spectrum {
+
+    0% {
+        transform: scaleY(0.20);
+        opacity: 0.58;
+    }
+
+    35% {
+        transform: scaleY(0.55);
+        opacity: 0.82;
+    }
+
+    70% {
+        transform: scaleY(0.86);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scaleY(1);
+        opacity: 0.94;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   18.6 - PLAYER EN REPOSO
+--------------------------------------------------------- */
+
+.equalizer.spectrum:not(.playing) span {
+    transform: scaleY(0.18);
+    opacity: 0.40;
+    box-shadow: none;
+}
+
+
+/* ---------------------------------------------------------
+   18.7 - AJUSTES DE CONTROLES
+--------------------------------------------------------- */
+
+.player-controls {
+    position: relative;
+    z-index: 2;
+}
+
+.play-button {
+    isolation: isolate;
+}
+
+.play-button:active {
+    transform: scale(0.96);
+}
+
+
+/* ---------------------------------------------------------
+   18.8 - MÓVIL
+--------------------------------------------------------- */
+
+@media (max-width: 720px) {
+
+    .track-metadata {
+        min-height: 12px;
+        margin-top: 2px;
+        font-size: 8px;
+    }
+
+    .equalizer.spectrum {
+        width: 100%;
+        height: 32px;
+        margin: 7px 0 8px;
+        padding: 4px 6px;
+        gap: 2px;
+        border-radius: 8px;
+    }
+
+    .equalizer.spectrum span {
+        min-width: 1px;
+        max-width: 3px;
+    }
+
+    .equalizer.spectrum span:nth-child(4n + 1) {
+        height: 12px;
+    }
+
+    .equalizer.spectrum span:nth-child(4n + 2) {
+        height: 20px;
+    }
+
+    .equalizer.spectrum span:nth-child(4n + 3) {
+        height: 16px;
+    }
+
+    .equalizer.spectrum span:nth-child(4n) {
+        height: 24px;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   18.9 - ACCESIBILIDAD / REDUCIR MOVIMIENTO
+--------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .equalizer.spectrum.playing span {
+        animation: none;
+        transform: scaleY(0.55);
+    }
+
+}

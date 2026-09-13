@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- =====================================================
+     01 - HEAD / CONFIGURACIÓN
+===================================================== -->
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#071017"
+    >
+
+    <meta
+        name="description"
+        content="Radio Caprichos - Des Andes du Pérou aux Landes de l'Atlantique"
+    >
+
+    <title>Radio Caprichos</title>
+
+    <link
+        rel="stylesheet"
+        href="css/app.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     02 - ESTRUCTURA GENERAL DE LA APP
+===================================================== -->
+
+<div class="app">
+
+
+    <!-- =================================================
+         03 - SIDEBAR / MENÚ PRINCIPAL
+    ================================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- 03.1 - Marca -->
+
+        <div class="brand">
+
+            <div class="brand-condor">
+                🦅
+            </div>
+
+            <div>
+
+                <h1>
+                    RADIO
+                    <span>CAPRICHOS</span>
+                </h1>
+
+                <small>
+                    Música sin fronteras
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- 03.2 - Navegación -->
+
+        <nav class="sidebar-menu">
+
+            <a
+                href="#inicio"
+                class="active"
+            >
+                🏠
+                <span>Inicio</span>
+            </a>
+
+            <a href="#radios">
+                📻
+                <span>Radios</span>
+            </a>
+
+            <a href="#chat">
+                💬
+                <span>Chat</span>
+            </a>
+
+            <a href="#">
+                ❤️
+                <span>Favoritos</span>
+            </a>
+
+            <a href="#">
+                📅
+                <span>Programación</span>
+            </a>
+
+
+            <div class="menu-separator"></div>
+
+
+            <div class="menu-title">
+                HISTORIA
+            </div>
+
+
+            <a href="pionniers.html">
+                🦅
+                <span>Pionniers</span>
+            </a>
+
+            <a href="galerie.html">
+                📸
+                <span>Galerie</span>
+            </a>
+
+            <a href="archives.html">
+                🗃️
+                <span>Archives</span>
+            </a>
+
+            <a href="rencontres.html">
+                🤝
+                <span>Rencontres</span>
+            </a>
+
+            <a href="caprichos-world.html">
+                🌎
+                <span>Caprichos World</span>
+            </a>
+
+        </nav>
+
+
+        <!-- 03.3 - Parte inferior sidebar -->
+
+        <div class="sidebar-bottom">
+
+            <strong>
+                🇵🇪 → 🇫🇷
+            </strong>
+
+            <span>
+                Des Andes jusqu'à l'Atlantique
+            </span>
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- =================================================
+         CONTENIDO PRINCIPAL
+    ================================================== -->
+
+    <main
+        class="main-content"
+        id="inicio"
+    >
+
+
+        <!-- =================================================
+             04 - HERO / BANNER RADIO CAPRICHOS
+        ================================================== -->
+
+        <section class="hero">
+
+            <div class="hero-landscape"></div>
+
+            <div class="hero-content"></div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             05 - REPRODUCTOR + CHAT
+        ================================================== -->
+
+        <div class="top-grid">
+
+
+            <!-- =============================================
+                 05 - REPRODUCTOR PRINCIPAL
+            ============================================== -->
+
+            <section class="player-card">
+
+
+                <!-- 05.1 - Portada -->
+
+                <div class="album-cover">
+
+                    <img
+                        id="playerCover"
+                        src="assets/images/stations/radio-caprichos.png"
+                        alt="Radio Caprichos"
+                        class="album-cover-image"
+                    >
+
+                </div>
+
+
+
+                <div class="player-info">
+
+
+                    <!-- 05.2 - Estado + calidad -->
+
+                    <div class="player-badges">
+
+                        <span
+                            class="live-badge"
+                            id="liveBadge"
+                        >
+                            ● MODO TEST
+                        </span>
+
+                        <span
+                            class="quality"
+                            id="qualityBadge"
+                        >
+                            MP3 · TEST
+                        </span>
+
+                    </div>
+
+
+                    <!-- 05.3 - Now Playing -->
+
+                    <div class="now-playing">
+                        AHORA SONANDO
+                    </div>
+
+
+                    <h2 id="trackTitle">
+                        Radio Caprichos
+                    </h2>
+
+
+                    <p id="trackArtist">
+                        La música que nos une
+                    </p>
+
+
+                    <!--
+                        Preparado para futuros metadatos:
+                        canción / artista / servidor
+                    -->
+
+                    <div
+                        class="track-metadata"
+                        id="trackMetadata"
+                        aria-live="polite"
+                    ></div>
+
+
+
+                    <!-- =====================================
+                         05.4 - ESPECTRO / ECUALIZADOR
+                    ====================================== -->
+
+                    <div
+                        class="equalizer spectrum"
+                        id="equalizer"
+                        aria-hidden="true"
+                    >
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                        <span></span>
+
+                    </div>
+
+
+
+                    <!-- =====================================
+                         05.5 - CONTROLES
+                    ====================================== -->
+
+                    <div class="player-controls">
+
+
+                        <button
+                            class="small-control"
+                            id="previousButton"
+                            type="button"
+                            aria-label="Estación anterior"
+                        >
+                            ⏮
+                        </button>
+
+
+                        <button
+                            class="play-button"
+                            id="playButton"
+                            type="button"
+                            aria-label="Reproducir Radio Caprichos"
+                        >
+                            ▶
+                        </button>
+
+
+                        <button
+                            class="small-control"
+                            id="nextButton"
+                            type="button"
+                            aria-label="Estación siguiente"
+                        >
+                            ⏭
+                        </button>
+
+
+
+                        <!-- 05.6 - Volumen -->
+
+                        <div class="volume-control">
+
+                            <span>
+                                🔊
+                            </span>
+
+                            <input
+                                id="volumeControl"
+                                type="range"
+                                min="0"
+                                max="1"
+                                step="0.01"
+                                value="0.8"
+                                aria-label="Volumen"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- 05.7 - Estado del reproductor -->
+
+                    <div
+                        class="player-status"
+                        id="playerStatus"
+                        aria-live="polite"
+                    >
+                        Pulsa ▶ para escuchar · MODO TEST
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 06 - CHAT CAPRICHOS
+            ================================================== -->
+
+            <section
+                class="chat-card"
+                id="chat"
+            >
+
+
+                <!-- 06.1 - Cabecera chat -->
+
+                <div class="chat-header">
+
+                    <div>
+
+                        <h3>
+                            💬 Chat Caprichos
+                        </h3>
+
+                        <span>
+                            Comunidad Radio Caprichos
+                        </span>
+
+                    </div>
+
+
+                    <div class="chat-demo">
+                        DEMO
+                    </div>
+
+                </div>
+
+
+
+                <!-- 06.2 - Mensajes demo -->
+
+                <div class="chat-messages">
+
+
+                    <div class="message">
+
+                        <div class="avatar">
+                            🇵🇪
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Carlos
+                            </strong>
+
+                            <p>
+                                ¡Saludos desde Lima! 🔥
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="message">
+
+                        <div class="avatar">
+                            🎶
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Gery
+                            </strong>
+
+                            <p>
+                                Qué recuerdos ❤️
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="message">
+
+                        <div class="avatar">
+                            🦅
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Franuito
+                            </strong>
+
+                            <p>
+                                Bienvenue à Radio Caprichos!
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- 06.3 - Entrada chat -->
+
+                <div class="chat-input">
+
+                    <input
+                        type="text"
+                        placeholder="Chat próximamente..."
+                        disabled
+                    >
+
+                    <button
+                        type="button"
+                        disabled
+                    >
+                        ➤
+                    </button>
+
+                </div>
+
+
+            </section>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             07 - NUESTRAS RADIOS
+        ================================================== -->
+
+        <section
+            class="stations-section"
+            id="radios"
+        >
+
+
+            <!-- 07.0 - Título sección -->
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        RADIO CAPRICHOS
+                    </span>
+
+                    <h2>
+                        Nuestras Radios
+                    </h2>
+
+                </div>
+
+
+                <p>
+                    Una radio para cada momento
+                </p>
+
+            </div>
+
+
+
+            <div class="stations">
+
+
+                <!-- =========================================
+                     07.1 - RADIO CAPRICHOS
+                ========================================== -->
+
+                <article
+                    class="station-card active"
+                    data-name="Radio Caprichos"
+                    data-description="La música que nos une"
+                    data-image="assets/images/stations/radio-caprichos.png"
+                    data-radio="main"
+                >
+
+                    <div class="station-image">
+
+                        <img
+                            src="assets/images/stations/radio-caprichos.png"
+                            alt="Radio Caprichos"
+                        >
+
+                    </div>
+
+
+                    <div class="station-content">
+
+                        <h3>
+                            Radio Caprichos
+                        </h3>
+
+                        <p>
+                            La radio principal
+                        </p>
+
+                        <span class="station-live">
+                            ● MODO TEST
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =========================================
+                     07.2 - MÚSICA ANDINA
+                ========================================== -->
+
+                <article
+                    class="station-card"
+                    data-name="Música Andina"
+                    data-description="Raíces que nos unen"
+                    data-image="assets/images/stations/musica-andina.png"
+                    data-radio="coming"
+                >
+
+                    <div class="station-image">
+
+                        <img
+                            src="assets/images/stations/musica-andina.png"
+                            alt="Música Andina"
+                        >
+
+                    </div>
+
+
+                    <div class="station-content">
+
+                        <h3>
+                            Música Andina
+                        </h3>
+
+                        <p>
+                            Raíces del Perú
+                        </p>
+
+                        <span>
+                            Próximamente
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =========================================
+                     07.3 - CUMBIA PERUANA
+                ========================================== -->
+
+                <article
+                    class="station-card"
+                    data-name="Cumbia Peruana"
+                    data-description="Ritmos que hacen latir el corazón"
+                    data-image="assets/images/stations/cumbia-peruana.png"
+                    data-radio="coming"
+                >
+
+                    <div class="station-image">
+
+                        <img
+                            src="assets/images/stations/cumbia-peruana.png"
+                            alt="Cumbia Peruana"
+                        >
+
+                    </div>
+
+
+                    <div class="station-content">
+
+                        <h3>
+                            Cumbia Peruana
+                        </h3>
+
+                        <p>
+                            Ritmo y alegría
+                        </p>
+
+                        <span>
+                            Próximamente
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =========================================
+                     07.4 - SALSA LATINA
+                ========================================== -->
+
+                <article
+                    class="station-card"
+                    data-name="Salsa Latina"
+                    data-description="Siente el ritmo, vive la cultura"
+                    data-image="assets/images/stations/salsa-latina.png"
+                    data-radio="coming"
+                >
+
+                    <div class="station-image">
+
+                        <img
+                            src="assets/images/stations/salsa-latina.png"
+                            alt="Salsa Latina"
+                        >
+
+                    </div>
+
+
+                    <div class="station-content">
+
+                        <h3>
+                            Salsa Latina
+                        </h3>
+
+                        <p>
+                            Que viva la salsa
+                        </p>
+
+                        <span>
+                            Próximamente
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =========================================
+                     07.5 - URBANA / REGGAETON
+                ========================================== -->
+
+                <article
+                    class="station-card"
+                    data-name="Urbana / Reggaeton"
+                    data-description="Más que música, una misma vibra"
+                    data-image="assets/images/stations/urbana-reggaeton.png"
+                    data-radio="urbana"
+                >
+
+                    <div class="station-image">
+
+                        <img
+                            src="assets/images/stations/urbana-reggaeton.png"
+                            alt="Urbana y Reggaeton"
+                        >
+
+                    </div>
+
+
+                    <div class="station-content">
+
+                        <h3>
+                            Urbana / Reggaeton
+                        </h3>
+
+                        <p>
+                            La vibra urbana
+                        </p>
+
+                        <span class="station-live">
+                            ● EN DIRECTO · 24/7
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =========================================
+                     07.6 - ROMÁNTICAS
+                ========================================== -->
+
+                <article
+                    class="station-card"
+                    data-name="Románticas"
+                    data-description="Canciones que nunca pasan de moda"
+                    data-image="assets/images/stations/romanticas.png"
+                    data-radio="coming"
+                >
+
+                    <div class="station-image">
+
+                        <img
+                            src="assets/images/stations/romanticas.png"
+                            alt="Románticas"
+                        >
+
+                    </div>
+
+
+                    <div class="station-content">
+
+                        <h3>
+                            Románticas
+                        </h3>
+
+                        <p>
+                            Para el corazón
+                        </p>
+
+                        <span>
+                            Próximamente
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             08 - HISTORIA / COMUNIDAD
+        ================================================== -->
+
+        <section class="history-grid">
+
+
+            <!-- 08.1 - Historia -->
+
+            <article class="history-card">
+
+                <div class="history-icon">
+                    🦅
+                </div>
+
+
+                <div>
+
+                    <span class="section-label">
+                        2008 → 2026
+                    </span>
+
+                    <h2>
+                        Notre histoire
+                    </h2>
+
+                    <p>
+                        De Villa El Salvador aux Landes.
+                        Retrouvez les pionniers, les anciennes émissions
+                        et les souvenirs de Radio Caprichos.
+                    </p>
+
+                    <a href="archives.html">
+                        Découvrir notre histoire →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- 08.2 - Comunidad -->
+
+            <article class="history-card">
+
+                <div class="history-icon">
+                    🌎
+                </div>
+
+
+                <div>
+
+                    <span class="section-label">
+                        PÉROU → FRANCE
+                    </span>
+
+                    <h2>
+                        Une communauté sans frontières
+                    </h2>
+
+                    <p>
+                        Une radio, une communauté, une famille.
+                        L'histoire continue entre le Pérou
+                        et les Landes.
+                    </p>
+
+                    <a href="communaute.html">
+                        Découvrir la communauté →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             09 - FOOTER
+        ================================================== -->
+
+        <footer>
+
+
+            <div class="footer-brand">
+
+                🦅
+
+                <strong>
+                    RADIO CAPRICHOS
+                </strong>
+
+            </div>
+
+
+            <p>
+                Des Andes du Pérou aux Landes de l'Atlantique
+            </p>
+
+
+            <small>
+                © 2008 - 2026 Radio Caprichos
+            </small>
+
+
+        </footer>
+
+
+    </main>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     10 - MENÚ MÓVIL
+===================================================== -->
+
+<nav class="mobile-nav">
+
+
+    <a
+        href="#inicio"
+        class="active"
+    >
+        <span>🏠</span>
+        Inicio
+    </a>
+
+
+    <a href="#radios">
+        <span>📻</span>
+        Radios
+    </a>
+
+
+    <a href="#chat">
+        <span>💬</span>
+        Chat
+    </a>
+
+
+    <a href="#">
+        <span>❤️</span>
+        Favoritos
+    </a>
+
+
+    <a href="archives.html">
+        <span>☰</span>
+        Más
+    </a>
+
+
+</nav>
+
+
+
+<!-- =====================================================
+     11 - MOTOR DE AUDIO HTML5
+===================================================== -->
+
+<audio
+    id="radioAudio"
+    preload="none"
+>
+
+    <source
+        src="assets/audio/test/test-radio.mp3"
+        type="audio/mpeg"
+    >
+
+</audio>
+
+
+
+<!-- =====================================================
+     12 - JAVASCRIPT
+===================================================== -->
+
+<script src="js/app.js"></script>
+
+
+</body>
+
+</html>
